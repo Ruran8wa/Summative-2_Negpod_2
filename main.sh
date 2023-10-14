@@ -6,7 +6,7 @@ create_student_record() {
   read -p "Enter the student's email: " email
   read -p "Enter the student's age: " age
   echo "$id, $email, $age" >> students-list_0923.txt
-  echo "Student record created and added to students-list_0923.txt"
+  echo "Student record created and added to students-list_0923"
 }
 
 #Function to view all students
@@ -22,18 +22,18 @@ update_student_records() {
   read -p "Enter the updated student email: " email
   read -p "Enter the updated student age: " age
 
-  # Use sed to update the student record with all three fields
+  # Used sed to update the student record with all three fields
   sed -i "/^$id1,/c\\$id2, $email, $age" students-list_0923.txt
   echo "Student record updated."
 }
 
 
-# Function to delete a student by student ID
+# Function to delete a student by student Email
 delete_student_by_id() {
   read -p "Enter the student Email to delete: " email
   # Use sed to remove the line with the matching student Email
   sed -i "/, $email/d" students-list_0923.txt
-  echo "Student with ID $email deleted."
+  echo "Student with Email $email deleted."
 }
 
 
